@@ -6,12 +6,14 @@ import { useState } from "react";
 import { Todo } from "./Todo";
 import axios from "axios";
 import "./styles.css";
+import { TodoType } from "./types/todo";
+import { Text } from "./Text";
+import { UserProfile } from "./UserProfile";
+import { User } from "./types/User";
 
-type TodoType = {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
+const user: User = {
+  name: "じゃけえ",
+  hobbies: ["映画", "ゲーム"]
 };
 
 export const App = () => {
@@ -34,7 +36,9 @@ export const App = () => {
       <Practice2 />
       <Practice3 />
       <Practice4 /> */}
+      <UserProfile user={user} />
       <br />
+      <Text color="red" fontSize="18px" />
       <br />
       <button onClick={onClickFetchData}>データ取得</button>
       {todos.map((todo) => (
